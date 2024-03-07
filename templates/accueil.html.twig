@@ -1,0 +1,79 @@
+{#-------------------------------------#}
+{# Zone Offres d'emplois }
+{#-------------------------------------#}
+{% extends('base.html.twig') %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{asset('css/style.css')}}">
+{% endblock %}
+
+{% block javascripts %}
+<script src="{{asset('js/modaleDetails.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+{#Écrire en dessous de ca!!!!!#}
+
+
+<section class="row">
+
+   <article class="col-4 sectionGauche">
+      <h3>Catégories</h3>
+
+      <form action="{{ path('accueilFiltre') }}" method="GET">
+         <button class="btn btn-warning" style="margin: 5px;" type="submit" name="categorie" value='-1'>Tous nos produits</button>
+
+         {% for cat in tabCategories %}
+         <button class="btn btn-warning" style="margin: 5px;" type="submit" name="categorie" value='{{cat.id}}'>{{cat.nom}}</button>
+         {% endfor %}
+      </form>
+
+
+      <hr>
+      <form action="{{ path('accueilFiltre') }}">
+         <h3>Recherche textuelle</h3><br>
+         <input name="texteRecherche" placeholder="texte recherché">
+         <button type="submit" class="btn btn-warning">Rechercher</button>
+      </form>
+
+
+   </article>
+
+
+
+
+   <article class="col-8 sectionDroite">
+      <h3>Nos produits</h3>
+      <div class="conteneurProduits row">
+
+         {% for flashMessage in app.flashes('notice') %}
+            <div class="alert alert-warning">
+               {{ flashMessage }}
+            </div>
+         {% endfor %}
+
+          {% for prod in tabProduits %}
+          <div class="unProduit col-3" id="modaleProduit">
+              <h5 class="titreProduit">{{prod.nom}}</h5>
+              <a class='boutonModal' href="{{ path('details', {id: prod.id } ) }}">
+                  <img src="{{ asset('images/' ~ prod.nom ~ '_1.png') }}" alt="Image non chargée" class="imgProduit">
+              </a>
+              <div class="prixEtPanier">
+                  <span class="prix">{{prod.prix}}$</span>
+                  <a href="" class="ajoutPanier">
+                      <img src="{{ asset('images/panier.png')}}" alt="Ajouter au panier" class="panierImg">
+                  </a>
+              </div>
+          </div>
+          {% endfor %}
+      </div>
+  </article>
+  
+
+</section>
+
+
+<section id="modaleDetails" title="Détails du produit">
+</section>
+
+{% endblock %}

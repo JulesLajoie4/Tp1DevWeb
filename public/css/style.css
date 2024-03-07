@@ -1,0 +1,88 @@
+.navigationBar{
+    text-align: end;
+}
+
+.unProduit {
+    border: 1px solid #000;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 250px;
+    float: left;
+    margin-right: 20px;
+
+    /* Utilise la couleur de fond du bouton btn-warning comme couleur de l'ombre */
+    box-shadow: 0px 0px 10px rgba(255, 193, 7, 0.5); /* Ombre jaune pâle (couleur de btn-warning) */
+}
+
+
+
+.imgProduit{
+    height: 200px;
+}
+
+.titreProduit {
+    font-size: 18px; 
+    font-weight: bold;
+    margin-bottom: 5px; 
+}
+
+.prixProduit {
+    font-size: 16px; /* Taille de la police */
+    font-weight: bold; /* Texte en gras */
+    color: black; /* Couleur du prix */
+}
+
+.conteneurProduits {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux éléments de se replier sur plusieurs lignes */
+    justify-content: space-between; /* Répartit les éléments avec un espace égal entre eux */
+}
+
+.enteteCQP {
+    background-color: #FFC107; /* Jaune */
+    color: #fff; /* Blanc */
+    padding: 10px 0;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+.logo {
+    width: 200px; /* Ajustez la largeur du logo selon vos besoins */
+}
+
+.title-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-size: 36px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 24px;
+}
+
+
+.prixEtPanier {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.panierImg {
+    height: 35px;
+    width: 35px;
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,62 @@
+{% extends "base.html.twig" %}
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour de Roue - Compagnie Québécoise de Vélos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #666;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tour de Roue - Compagnie Québécoise de Vélos</h1>
+        <p>Tour de Roue est une compagnie québécoise familiale créée en 2019 par deux frères et leur père. Nous sommes passionnés par les vélos et nous nous efforçons de fournir les meilleurs produits et services à nos clients.</p>
+        <p>Nous offrons une politique de retour qui permet les retours 30 jours ou moins depuis l'achat. Notre objectif est de garantir la satisfaction de nos clients à chaque étape de leur expérience d'achat.</p>
+        
+        <div class="contact-info">
+            <h2>Nous Contacter</h2>
+            <p>Téléphone : 450-661-7803</p>
+            <p>Courriel : <a href="mailto:tourderoue@gmail.com">tourderoue@gmail.com</a></p>
+        </div>
+    </div>
+</body>
+</html>
+
+
+{% endblock %}

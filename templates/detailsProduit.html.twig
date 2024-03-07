@@ -1,0 +1,22 @@
+
+<p class="titreProduit">{{produit.nom}}</p> 
+Fait parti de la catégorie des <b>{{produit.categorie.nom}}</b> <br>
+
+<img class="imgProduit" src="{{ asset('images/' ~ produit.nom ~ '_2.png') }}" alt="image non chargée"> <br>
+
+{{produit.description}}
+
+<br> <br>
+
+<b>{{produit.prix}}$</b>
+<br>  <br>
+
+Quantité en stock: <b>{{produit.quantiteEnStock}}</b> <br>
+
+<br> 
+
+<a href="" class="ajoutPanier">
+    <img src="{{ asset('images/panier.png')}}" alt="Ajouter au panier" class="panierImg">
+</a>
+
+
