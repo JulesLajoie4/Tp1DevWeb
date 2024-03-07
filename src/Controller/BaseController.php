@@ -11,8 +11,16 @@ use Doctrine\Persistence\ManagerRegistry;
 use App\Entity\Produits;
 use App\Entity\Categories;
 
+//--------------------------------
+// Fichier créé par Jules Lajoie
+// 7 mars 2024
+//--------------------------------   
+
 class BaseController extends AbstractController
 {
+    //-------------------------------------
+    //
+    //-------------------------------------
     // Deuxième route pour détails
     #[Route('/details/{id}', name: 'details')]
     public function details(ManagerRegistry $doctrine, $id): Response
@@ -26,6 +34,10 @@ class BaseController extends AbstractController
 
 
     }
+
+    //-------------------------------------
+    //
+    //-------------------------------------
 
     // Première route
     #[Route('/', name: 'accueil')]
@@ -67,7 +79,6 @@ class BaseController extends AbstractController
         $texteRecherche = $request->query->get('texteRecherche');
         $idCategorie = $request->query->get('categorie');
 
-        //dd($texteRecherche);
 
         if (strlen($texteRecherche) > 0 )
         {
@@ -77,10 +88,6 @@ class BaseController extends AbstractController
                 $this->addFlash("notice", "Aucune produit n'a un nom contenant '$texteRecherche'");
             }
         }
-        // else
-        // {
-        //     $this->addFlash("notice", "Veuillez remplir le champ de recherche");
-        // }
 
         if (isset($idCategorie))
         {

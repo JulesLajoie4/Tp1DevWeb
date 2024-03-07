@@ -1,5 +1,8 @@
 {#-------------------------------------#}
-{# Zone Offres d'emplois }
+{#  
+   Fichier créé par Jules Lajoie
+    7 mars 2024 
+   }
 {#-------------------------------------#}
 {% extends('base.html.twig') %}
 
@@ -12,7 +15,6 @@
 {% endblock %}
 
 {% block body %}
-{#Écrire en dessous de ca!!!!!#}
 
 
 <section class="row">
@@ -52,20 +54,27 @@
             </div>
          {% endfor %}
 
-          {% for prod in tabProduits %}
-          <div class="unProduit col-3" id="modaleProduit">
-              <h5 class="titreProduit">{{prod.nom}}</h5>
-              <a class='boutonModal' href="{{ path('details', {id: prod.id } ) }}">
-                  <img src="{{ asset('images/' ~ prod.nom ~ '_1.png') }}" alt="Image non chargée" class="imgProduit">
-              </a>
-              <div class="prixEtPanier">
-                  <span class="prix">{{prod.prix}}$</span>
-                  <a href="" class="ajoutPanier">
-                      <img src="{{ asset('images/panier.png')}}" alt="Ajouter au panier" class="panierImg">
+         
+         
+            <div class="row">
+
+               {% for prod in tabProduits %}
+               <div class="unProduit col-3">
+                  <h5 class="titreProduit">{{prod.nom}}</h5>
+                  <a class='boutonModal' href="{{ path('details', {id: prod.id } ) }}">
+                     <img src="{{ asset('images/prod' ~ prod.id ~ '_1.png') }}"  alt="Image non chargée" class="imgProduit">
                   </a>
-              </div>
-          </div>
-          {% endfor %}
+                  <div class="prixEtPanier">
+                     <span class="prix">{{prod.prix}}$</span>
+                     <a href="" class="ajoutPanier">
+                        <img src="{{ asset('images/panier.png')}}" alt="Ajouter au panier" class="panierImg">
+                     </a>
+                  </div> 
+               </div>
+               {% endfor %}
+            </div>
+       
+         
       </div>
   </article>
   
